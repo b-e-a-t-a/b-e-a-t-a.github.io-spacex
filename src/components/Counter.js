@@ -104,9 +104,9 @@ class Counter extends React.Component {
 
 	render() {
 		return (
-		<div>
-			<div className="stopwatch header_sml_dark" onClick={() => this.reset()}>{this.format(this.state.from) }</div>
-			<button className="stopwatch__button" onClick={() => this.reset()}>Delay up to one year</button>
+		<div className="counter">
+			<div className="counter__header_sml_dark" onClick={() => this.reset()}>{this.format(this.state.from) }</div>
+			<button className="counter__button" onClick={() => this.reset()}>Delay up to one year</button>
 		</div>
 		);
 	}

@@ -1,6 +1,6 @@
-.stopwatch {
+.counter {
   text-align: left; }
-  .stopwatch__button {
+  .counter__button {
     color: #ccac5b;
     border: 2px solid #ccac5b;
     -webkit-border-radius: 20px;
@@ -16,7 +16,7 @@
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 3%; }
-    .stopwatch__button:hover {
+    .counter__button:hover {
       cursor: pointer;
       background: transparent;
       border-color: #666666;

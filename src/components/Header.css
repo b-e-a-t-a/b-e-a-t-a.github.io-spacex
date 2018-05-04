@@ -1,4 +1,4 @@
-.header {
+.section-header {
   color: #ccac5b;
   background-color: #0f1112;
   font-size: 22px;
@@ -10,10 +10,10 @@
   align-items: center;
   justify-content: center;
   padding-left: 2%; }
-  .header__back {
+  .section-header__back {
     margin-right: 10rem;
     cursor: pointer; }
-  .header__logo {
+  .section-header__logo {
     background-image: url("../assets/logo.png");
     background-repeat: no-repeat;
     display: inline-block;
@@ -23,5 +23,5 @@
     font-size: 0;
     margin: 0 auto;
     padding: 0; }
-    .header__logo:hover {
+    .section-header__logo:hover {
       cursor: pointer; }
