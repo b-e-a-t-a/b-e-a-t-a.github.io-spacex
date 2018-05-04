@@ -10,15 +10,14 @@ import Pad from '../components/Pad';
 
 const LaunchDetails = (props) => (
 	<div className="app">
-		<Header className="header" />
+		<Header />
                 <section className="launch-details">
                 	<div className="container">
                 		<div className="row">
-                			<div className="col-6">
+                			<div className="col-6 col-s-12">
                                                 <Launch launch={props.launch}/>
                                         </div>
-
-                			<div className="col-6">
+                			<div className="col-6 col-s-12">
                                                 <div className="row">
                                                         <Details launch={props.launch}/>
                                                 </div>

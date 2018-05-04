@@ -1,33 +1,27 @@
 .header {
-  font-size: 14px;
   color: #ccac5b;
   background-color: #0f1112;
-  letter-spacing: 9px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 18px;
   text-transform: uppercase;
   height: 5em;
-  padding-left: 10px;
   display: flex;
-  flex-direction: row;
-  align-items: center; }
-  .header .back {
-    color: #ccac5b;
-    font-size: 30px; }
-  .header a.logo {
+  align-items: center;
+  justify-content: center;
+  padding-left: 2%; }
+  .header__back {
+    margin-right: 10rem;
+    cursor: pointer; }
+  .header__logo {
     background-image: url("../assets/logo.png");
     background-repeat: no-repeat;
-    background-origin: content-box;
     display: inline-block;
-    width: 50%;
-    height: 50%;
-    top: 50%;
-    left: 50%;
-    position: relative;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    width: 60%;
+    height: 60%;
     background-size: contain;
     font-size: 0;
-    text-align: center;
     margin: 0 auto;
     padding: 0; }
-    .header a.logo:hover {
+    .header__logo:hover {
       cursor: pointer; }

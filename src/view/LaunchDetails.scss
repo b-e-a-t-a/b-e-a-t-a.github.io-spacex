@@ -1,0 +1,41 @@
+@import '../App.scss';
+
+.app {
+	margin: 0 auto;
+}
+
+.launch-details {
+	margin: 0 auto;
+	padding: 2%;
+	padding-top: 0;
+}
+
+.header_sml_semibold {
+	@include font-sml-semibold;
+	color: $desert;
+	border-bottom: 3px solid $desert;
+	padding-bottom: 15px;
+	margin-top: 10%;
+}
+.header_sml_cool {
+	@include font-sml;
+	color: $cool-grey;
+}
+.header_sml_dark {
+	@include font-sml;
+	color: $dark-grey;
+}
+.header_sml_brownish {
+	@include font-sml;
+	color: $brownish-grey;
+}
+.basic {
+	@include font-basic;
+	color: $dark-grey;	
+}
+.rocket-border {
+	border-left: 3px dotted $cool-grey;	
+	p {
+		padding-left: 2em;
+	}
+}

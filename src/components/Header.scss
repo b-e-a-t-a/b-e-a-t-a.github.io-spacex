@@ -1,36 +1,26 @@
+@import '../App.scss';
+
 .header {
-	font-size: 14px;
-	color: #ccac5b;
-	background-color: #0f1112;
-	letter-spacing: 9px;
-	text-transform: uppercase;
+	color: $desert;
+	background-color: $almost-black;
+	@include font-sml-semibold;
 	height: 5em;
-	padding-left: 10px;
 	display: flex;
-	flex-direction: row;
 	align-items: center;
-	.back {
-		color: #ccac5b;
-		font-size: 30px;
-		.fa-long-arrow-left {
-		}
+	justify-content: center;
+	padding-left: 2%;
+	&__back {
+		margin-right: 10rem;
+		cursor: pointer;
 	}
-	
-	a.logo {
+	&__logo {
 		background-image: url("../assets/logo.png");
 		background-repeat: no-repeat;
-		background-origin: content-box;
 		display: inline-block;
-		width: 50%;
-		height: 50%;
-		top: 50%;
-		left: 50%;
-		position: relative;
-		transform: translate(-50%, -50%);
-		text-align: center;
+		width: 60%;
+		height: 60%;
 		background-size: contain;
 		font-size: 0;
-		text-align: center;
 		margin: 0 auto;
 		padding: 0;
 		&:hover {
@@ -38,6 +28,3 @@
 		}
 	}
 }
-
-
-

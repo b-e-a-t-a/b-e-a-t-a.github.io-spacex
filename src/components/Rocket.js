@@ -1,5 +1,5 @@
 import React from 'react';
-import './Rocket.css';
+import '../view/LaunchDetails.css';
 
 class Rocket extends React.Component {
 	render() {
@@ -10,25 +10,38 @@ class Rocket extends React.Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<h1>ROCKET</h1>
+					<h1 className="header_sml_semibold">ROCKET</h1>
 				</div>
 				<div className="row">
-					<div className="col-6">
-						<p>NAME: {props.name}</p>
-						<p>COMPANY: {props.company}</p>
-						<p>HEIGHT: {props.height.meters}M / {props.height.feet}FT</p>
-						<p>DIAMETER: {props.diameter.meters}M / {props.diameter.feet}FT</p>
-						<p>MASS: {props.mass.kg}KG / {props.mass.lb}LB</p>
+					<div className="col-6 col-m-12 col-s-12 rocket-border">
+						<p><span className="header_sml_cool">NAME: </span>
+						<span className="header_sml_dark"> {props.name}</span></p>
+
+						<p><span className="header_sml_cool">COMPANY: </span>
+						<span className="header_sml_dark">{props.company}</span></p>
+
+						<p><span className="header_sml_cool">HEIGHT: </span>
+						<span className="header_sml_dark"> {props.height.meters}M / {props.height.feet}FT</span></p>
+
+						<p><span className="header_sml_cool">DIAMETER: </span>
+						<span className="header_sml_dark"> {props.diameter.meters}M / {props.diameter.feet}FT</span></p>
+
+						<p><span className="header_sml_cool">MASS: </span> 
+						<span className="header_sml_dark">{props.mass.kg}KG / {props.mass.lb}LB</span></p>
 					</div>
-					<div className="col-6">
-						<p>FIRST FLIGHT: {result}</p>
-						<p>COUNTRY: {props.country}</p>
-						<p>SUCCESS RATE: {props.success_rate_pct}%</p>
-						<p>COST PER LAUNCH: ${props.cost_per_launch}</p>
+					<div className="col-6 col-m-12 col-s-12 rocket-border">
+						<p><span className="header_sml_cool">FIRST FLIGHT: </span>
+						<span className="header_sml_dark"> {result}</span></p>
+						<p><span className="header_sml_cool">COUNTRY: </span>
+						<span className="header_sml_dark">{props.country}</span></p>
+						<p><span className="header_sml_cool">SUCCESS RATE: </span>
+						<span className="header_sml_dark"> {props.success_rate_pct}%</span></p>
+						<p><span className="header_sml_cool">COST PER LAUNCH: </span>
+						<span className="header_sml_dark"> ${props.cost_per_launch}</span></p>
 					</div>
 				</div>
 				<div className="row">
-					<p>{props.description}</p>
+					<p className="basic">{props.description}</p>
 				</div>
 			</div>		
 		);
