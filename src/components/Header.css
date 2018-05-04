@@ -11,17 +11,17 @@
   justify-content: center;
   padding-left: 2%; }
   .section-header__back {
-    margin-right: 10rem;
     cursor: pointer; }
   .section-header__logo {
     background-image: url("../assets/logo.png");
     background-repeat: no-repeat;
     display: inline-block;
-    width: 60%;
+    width: 40%;
     height: 60%;
     background-size: contain;
     font-size: 0;
     margin: 0 auto;
-    padding: 0; }
+    padding: 0;
+    margin-right: 25%; }
     .section-header__logo:hover {
       cursor: pointer; }
