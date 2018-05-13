@@ -39,3 +39,15 @@ $cool-grey: #a7a9ac;
 	-ms-border-radius: $radius;
 	border-radius: $radius;
 }
+
+.page-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    .page-content {
+		flex: 1;
+		-webkit-box-flex: 1;
+	}
+}

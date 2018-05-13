@@ -2,7 +2,6 @@ import React from 'react';
 import './LaunchDetails.css';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import Footer from '../components/Footer';
 import Launch from '../components/Launch';
 import Details from '../components/Details';
 import Rocket from '../components/Rocket';
@@ -33,7 +32,6 @@ const LaunchDetails = (props) => (
                 	</div>
                 </section>
                 <Hero/>
-                <Footer />
 	</div>
 
 );

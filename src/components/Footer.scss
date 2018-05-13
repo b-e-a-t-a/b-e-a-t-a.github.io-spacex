@@ -1,59 +1,61 @@
 @import '../App.scss';
 
-.footer {
+.page-footer {
 	background-color: $dark-grey;
-	padding: 2%;
-	&__links {
+	-webkit-box-flex: 0;
+	flex: 0 0;
+	text-transform: uppercase;
+	@include font-sml;
+	color: $brownish-grey;
+	&__content {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: row;
 		align-items: center;
-		list-style: none;
+		justify-content: space-between;
+		height: 100px;
+		padding: 0 2%;
+		min-width: 768px;
+   		max-width: 1600px;
+    }
+    &__social-follow {
+		&::after {
+			content: "|";
+			padding: 0 10px;
+    	}
+	}
+	&__social-links {
+		display: inline-block;
+		margin: 0;
 		padding: 0;
-		.header_sml_brownish {
-			border-right: 1px solid $brownish-grey;
-			padding-right: 1rem;
-		}
-		.header_sml_cool {
-			padding-right: 1rem;
-		}
+		list-style: none;
 	}
-	.header_sml_brownish_right {
-		text-align: right;
+	&__social-link {
+		@include font-sml;
+		color: $cool-grey;
+		padding-right: 1rem;
+		display: inline-block;
 	}
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-	.footer {
-		&__links {
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			.header_sml_brownish {
-				border: none;
-			}
-		}
-	}
-	.header_sml_brownish_right {
-		text-align: right;
-		margin-bottom: 0;
-	}
-
 }
 
 @media (max-width: 767px) {
-	.footer {
-		&__links {
-			display: flex;
+	.page-footer {
+		padding: 2% 0;
+		&__content {
+			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			flex-wrap: wrap;
-			.header_sml_cool {
-				padding-left: 10px;
-			}
+			min-width: 100vw;
+			max-width: 100vw;
 		}
-		.header_sml_brownish_right {
-			text-align: center;
+		&__social-follow {
+			display: block;
+		}
+		&__social-links {
+			display: block;
+		}
+		&__right {
+			display: block;
 		}
 	}
-
 }

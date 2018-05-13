@@ -1,0 +1,32 @@
+@import '../App.scss';
+
+.list__buttons {
+	min-height: 12vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.list__buttons-content {
+		min-width: 70vw;
+		text-align: center;
+	}
+	.list__button, .list__button-all {
+		color: $cool-grey;
+		border: 1px solid $cool-grey;
+		@include border-radius(30px);
+		background: transparent;
+		@include font-sml;
+		font-size: 14px;
+		padding: 7px;
+		padding-left: 30px;
+		padding-right: 30px;
+		margin-left: 1%;
+		margin-right: 1%;
+		&:hover {
+			cursor: pointer;
+			box-shadow: inset 0px 0px 8px 1px $white;
+			font-weight: bold;
+			color: $white;
+			border-color: $white;
+		}
+	}
+}
