@@ -22,7 +22,7 @@ class App extends Component {
     const { viewName } = this.state;
 
     switch (viewName) {
-      case 'details':
+      case 'list':
         return (
           <LaunchesList
             launches={launches}

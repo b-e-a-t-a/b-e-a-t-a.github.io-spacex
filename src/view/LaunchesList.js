@@ -4,7 +4,7 @@ import ListHero from '../components/ListHero';
 
 import FilterButtons from '../components/FilterButtons';
 import Footer from '../components/Footer';
-import Item from './Item.js';
+import ItemList from '../components/ItemList.js';
 
 
 class LaunchesList extends React.Component {
@@ -67,11 +67,13 @@ class LaunchesList extends React.Component {
 
 	render() {
 		const items = [];
+		const launchClick = this.props.onLaunchClick;
 		this.state.launches.forEach((launch, index) => {
 			items.push (
-				<Item
+				<ItemList
 					launch={launch}
 					id={index}
+					onClick={launchClick}
 				/>
 			)
 		})

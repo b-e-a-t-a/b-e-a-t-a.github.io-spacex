@@ -4,8 +4,8 @@
 	color: $white;
 	font-size: 14px;
 	text-transform: uppercase;
-	padding-left: 2vw;
-	padding-right: 2vw;
+	padding-left: 2.5vw;
+	padding-right: 2.5vw;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -95,7 +95,7 @@
 	}
 	&-arrow-left {
 		height: 1em;
-		width: 8px;
+		width: 24px;
 		margin: 0;
 		padding: 0;
 	    background: url("../assets/arrow_pointer.png") no-repeat;
@@ -105,7 +105,7 @@
 	    	&::after {
 			display: inline-block;
 			content: '';
-			width: calc(45vw - 8px);
+			width: calc(45vw + 8px);
 			background: $desert;
 			position: absolute;
 			height: 2px;

@@ -9,7 +9,7 @@ import Pad from '../components/Pad';
 
 const LaunchDetails = (props) => (
 	<div className="app-launch-details">
-		<Header />
+		<Header onClick={props.onBackClick}/>
                 <section className="launch-details">
                 	<div className="container">
                 		<div className="row">

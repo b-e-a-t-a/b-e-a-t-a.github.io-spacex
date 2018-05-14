@@ -1,7 +1,7 @@
 import React from 'react';
-import './Item.css';
+import './ItemList.css';
 
-class Item extends React.Component {
+class ItemList extends React.Component {
 	render() {
 		const launch = this.props.launch;
 
@@ -16,7 +16,7 @@ class Item extends React.Component {
 				<li className={"list__body"+side}>
 					<h1 className="list__body-header">{result}</h1>
 					<div className={"list__body-arrow" + arrowSide}></div>
-					<h2 className={"list__body-subheader" + arrowSide}>
+					<h2 className={"list__body-subheader" + arrowSide} onClick={this.props.onClick}>
 						<span className="list__body-label">rocket: </span>
 						<span className="list__body-value">{launch.rocket.rocket_name}</span>
 						<span className="list__body-separator">|</span>
@@ -29,4 +29,4 @@ class Item extends React.Component {
 	}
 }
 
-export default Item;
+export default ItemList;
