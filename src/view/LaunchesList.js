@@ -67,10 +67,11 @@ class LaunchesList extends React.Component {
 
 	render() {
 		const items = [];
-		this.state.launches.forEach((launch) => {
+		this.state.launches.forEach((launch, index) => {
 			items.push (
 				<Item
 					launch={launch}
+					id={index}
 				/>
 			)
 		})
@@ -82,7 +83,7 @@ class LaunchesList extends React.Component {
 		          onClick={this.handleClick}
 		          onClickAll={this.handleClickAll}
 		        />
-				<div className="list__body">{items}</div>
+				<div className="list__container">{items}</div>
 			</div>
 		);
 	}

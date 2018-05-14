@@ -12,7 +12,8 @@
   min-height: 12vh;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  margin-bottom: 5vh; }
   .list__buttons .list__buttons-content {
     min-width: 70vw;
     text-align: center; }

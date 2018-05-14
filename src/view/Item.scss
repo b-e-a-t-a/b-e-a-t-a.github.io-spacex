@@ -1,0 +1,117 @@
+@import '../App.scss';
+
+.list__body {
+	color: $white;
+	font-size: 14px;
+	text-transform: uppercase;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	poition: relative;
+	&::after {
+		content: '';
+		border: dotted 3px $cool-grey;
+		border-radius: 50%;
+		top: 45%;
+		left: 50%;
+		position: absolute;
+	}
+	&:before {
+		content: '';
+		border-left: dashed 1px $cool-grey;
+		top: 0;
+		left: 50.2%;
+		height: 100%;
+		position: absolute;
+	}
+	&left {
+		text-align: left;
+		align-self: flex-start;
+		width: 45vw;
+		list-style: none;
+		white-space: nowrap;
+	}
+	&right {
+		text-align: right;
+		align-self: flex-end;
+		width: 45vw;
+		white-space: nowrap;
+		list-style: none;
+	}
+	&-header {
+		@include font-exp-semibold;
+		letter-spacing: 8px;
+	}
+	&-subheader-left {
+		@include font-sml;
+		font-size: 14px;
+		text-align: left;
+		max-width: 35vw;
+		margin-right: 10vw;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	&-subheader-right {
+		@include font-sml;
+		font-size: 14px;
+		text-align: left;
+		margin-left: 10vw;
+		width: 35vw;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	&-label {
+		color: $cool-grey;
+	}
+	&-value {
+		margin-right: 6px;
+		margin-left: 2px;
+	}
+	&-separator {
+		color: $cool-grey;
+		padding-right: 6px;
+	}
+	&-arrow-right {
+		height: 1em;
+		width: 8px;
+		margin: 0;
+		padding: 0;
+	    background: url("../assets/arrow_pointer.png") no-repeat;
+	    &::after {
+			display: inline-block;
+			content: '';
+			width: calc(45vw - 8px);
+			background: $desert;
+			position: absolute;
+			height: 2px;
+			margin-top: 4px;
+			margin-right: 0;
+			align-self: flex-end;
+    	}
+	}
+	&-arrow-left {
+		height: 1em;
+		width: 8px;
+		margin: 0;
+		padding: 0;
+	    background: url("../assets/arrow_pointer.png") no-repeat;
+		transform: rotate(180deg);
+		margin-left: calc(45vw - 16px);
+	    position: relative;
+	    	&::after {
+			display: inline-block;
+			content: '';
+			width: calc(45vw - 8px);
+			background: $desert;
+			position: absolute;
+			height: 2px;
+			margin-left: 0;
+			margin-top: 4px;
+			align-self: flex-start;
+    	}
+	}
+}

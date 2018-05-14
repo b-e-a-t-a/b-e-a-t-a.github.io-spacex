@@ -17,16 +17,17 @@
   font-size: 22px;
   text-align: center;
   text-transform: uppercase;
-  color: #666666; }
+  color: #666666;
+  font-size: 14px; }
   .page-footer__content {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     height: 100px;
-    padding: 0 2%;
+    padding: 0 5%;
     min-width: 768px;
-    max-width: 1600px; }
+    max-width: 1700px; }
   .page-footer__social-follow::after {
     content: "|";
     padding: 0 10px; }
@@ -42,7 +43,8 @@
     text-transform: uppercase;
     color: #a7a9ac;
     padding-right: 1rem;
-    display: inline-block; }
+    display: inline-block;
+    font-size: 14px; }
 
 @media (max-width: 767px) {
   .page-footer {
