@@ -23,7 +23,7 @@ class App extends Component {
     this.handleBackClick = this.handleBackClick.bind(this);
   }
   componentDidMount() { 
-    fetch("https://api.spacexdata.com/v2/launches/all")
+    fetch("https://api.spacexdata.com/v15/launches/all")
         .then(response => response.json())
         .then(
         (result) => {
@@ -42,7 +42,6 @@ class App extends Component {
     }
   get activeViewComponent() {
     const { viewName } = this.state;
-  
 
     switch (viewName) {
       case 'list':
@@ -77,7 +76,7 @@ class App extends Component {
     const { error, isLoaded } = this.state;
 
     if (error) {
-      return <div>Error: </div>;
+      return <div className="error"><img src="https://cdn.dribbble.com/users/27818/screenshots/985070/404_1x.jpg" /> </div>;
     } else if (!isLoaded) {
       return <div className="spinner-container"><Spinner name="ball-spin-fade-loader" className="spinner" /></div>;
     } else {

@@ -8,6 +8,14 @@
     flex: 1;
     -webkit-box-flex: 1; }
 
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  background-color: #0f1112; }
+
 .spinner-container {
   display: flex;
   align-items: center;
