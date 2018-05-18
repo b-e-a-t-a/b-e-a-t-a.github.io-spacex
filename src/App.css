@@ -7,3 +7,13 @@
   .page-container .page-content {
     flex: 1;
     -webkit-box-flex: 1; }
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  background-color: #22272b; }
+  .spinner-container .spinner {
+    color: #ccac5b; }

@@ -11,7 +11,7 @@ class LaunchesList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			launches: this.props.launches,
+			launches: this.props.launches 
 		}
 		this.handleClick = this.handleClick.bind(this);
 		this.handleClickAll = this.handleClickAll.bind(this);
@@ -77,6 +77,7 @@ class LaunchesList extends React.Component {
 				/>
 			)
 		})
+
 		return (
 			<div className="list">
 				<ListHero />

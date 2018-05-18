@@ -4,28 +4,51 @@ import launch from './assets/launch.json';
 import launchSite from './assets/launch_site.json';
 import rocket from './assets/rocket.json';
 import LaunchDetails from './view/LaunchDetails';
-import launches from './assets/launches.json';
 import LaunchesList from './view/LaunchesList';
 import Footer from './components/Footer';
+
+const Spinner = require('react-spinkit');
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       viewName: 'details',
+      error: null,
+      isLoaded: false,
+      launches: []
     };
 
     this.handleLaunchClick = this.handleLaunchClick.bind(this);
     this.handleBackClick = this.handleBackClick.bind(this);
   }
+  componentDidMount() { 
+    fetch("https://api.spacexdata.com/v2/launches/all")
+        .then(response => response.json())
+        .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            launches: result,
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+    }
   get activeViewComponent() {
     const { viewName } = this.state;
+  
 
     switch (viewName) {
       case 'list':
         return (
           <LaunchesList
-            launches={launches}
+            launches={this.state.launches}
             onLaunchClick={this.handleLaunchClick}
           />
         );
@@ -51,6 +74,13 @@ class App extends Component {
   }
 
   render() {
+    const { error, isLoaded } = this.state;
+
+    if (error) {
+      return <div>Error: </div>;
+    } else if (!isLoaded) {
+      return <div className="spinner-container"><Spinner name="ball-spin-fade-loader" className="spinner" /></div>;
+    } else {
     return (
       <main className="page-container">
         <div className="page-content">
@@ -59,6 +89,7 @@ class App extends Component {
         <Footer />
       </main>
     );
+    }
   }
 }
 

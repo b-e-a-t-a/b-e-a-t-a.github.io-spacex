@@ -51,3 +51,14 @@ $cool-grey: #a7a9ac;
 		-webkit-box-flex: 1;
 	}
 }
+.spinner-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	height: 100vh;
+	background-color: $dark-grey;
+	.spinner {
+		color: $desert;
+	}
+}
