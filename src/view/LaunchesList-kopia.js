@@ -32,7 +32,6 @@ class LaunchesList extends React.Component {
 		return rocketNames;
 	}
 
-
 	/*get filteredLaunches() {
 		const {rocketNameFilter} = this.state;
 		const {launches} = this.props;
@@ -48,22 +47,16 @@ class LaunchesList extends React.Component {
 		});
 		
 	}*/
-
 	handleClick(e) {
+		e.preventDefault();
+		const {launches} = this.props;
 		const nameClicked = e.target.value;
-
-		fetch(`https://api.spacexdata.com/v2/launches?rocket_name=${nameClicked}`)
-	        .then(response => response.json())
-	        .then(result => {
-	          this.setState({
-	            launches: result,
-	          });
-	        })
-	        .catch(error => {
-	          this.setState({
-	            error
-	          });
-	        })
+		const displayed = launches.filter( launch => launch.rocket.rocket_name === nameClicked );
+		console.log(nameClicked);
+		console.log(displayed);
+		this.setState({
+			launches: displayed,
+		});
 	}
 	handleClickAll() {
 		this.setState({
@@ -83,23 +76,18 @@ class LaunchesList extends React.Component {
 				/>
 			)
 		})
-		const { error } = this.state;
-	    if (error) {
-	      return <h1>Sorry, no launches found </h1>;
-	    } else {
 
-			return (
-				<div className="list">
-					<ListHero />
-					<FilterButtons
-			          options={this.availableRocketNames}
-			          onClick={this.handleClick}
-			          onClickAll={this.handleClickAll}
-			        />
-					<div className="list__container">{items}</div>
-				</div>
-			);
-		}
+		return (
+			<div className="list">
+				<ListHero />
+				<FilterButtons
+		          options={this.availableRocketNames}
+		          onClick={this.handleClick}
+		          onClickAll={this.handleClickAll}
+		        />
+				<div className="list__container">{items}</div>
+			</div>
+		);
 	}
 }
 

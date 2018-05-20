@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewName: 'details',
+      viewName: 'list',
       error: null,
       isLoaded: false,
       launches: []
@@ -23,22 +23,20 @@ class App extends Component {
     this.handleBackClick = this.handleBackClick.bind(this);
   }
   componentDidMount() { 
-    fetch("https://api.spacexdata.com/v15/launches/all")
+    fetch("https://api.spacexdata.com/v2/launches/all")
         .then(response => response.json())
-        .then(
-        (result) => {
+        .then(result => {
           this.setState({
             isLoaded: true,
             launches: result,
           });
-        },
-        (error) => {
+        })
+        .catch(error => {
           this.setState({
             isLoaded: true,
             error
           });
-        }
-      )
+        })
     }
   get activeViewComponent() {
     const { viewName } = this.state;
