@@ -10,7 +10,7 @@ class LaunchesList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			launches: this.props.launches 
+			launches: this.props.launches,
 		}
 		this.handleClick = this.handleClick.bind(this);
 		this.handleClickAll = this.handleClickAll.bind(this);
@@ -18,6 +18,8 @@ class LaunchesList extends React.Component {
 		
 	}
 
+	//1. if rockets from API list:
+	/*
 	get availableRocketNames() {
 		const {launches} = this.props;
 
@@ -31,8 +33,15 @@ class LaunchesList extends React.Component {
 
 		return rocketNames;
 	}
+	*/
 
+	// 2. if rockets specified in the task description:
+	get availableRocketNames() {
 
+		const rocketNames = ["Falcon 1", "Falcon 9", "Falcon 10", "Falcon Heavy"];
+
+		return rocketNames;
+	}
 	/*get filteredLaunches() {
 		const {rocketNameFilter} = this.state;
 		const {launches} = this.props;

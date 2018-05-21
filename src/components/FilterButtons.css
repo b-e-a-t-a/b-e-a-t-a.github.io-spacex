@@ -59,3 +59,5 @@
       font-weight: bold;
       color: #ffffff;
       border-color: #ffffff; }
+    .list__buttons .list__button:focus, .list__buttons .list__button-all:focus {
+      outline: none; }
