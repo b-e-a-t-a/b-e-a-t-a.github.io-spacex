@@ -1,5 +1,5 @@
 import React from 'react';
-import './ListHero.css';
+import '../styles/ListHero.css';
 
 const ListHero = () => (
 	<div className="list__hero">

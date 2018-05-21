@@ -1,5 +1,5 @@
 import React from 'react';
-import "./FilterButtons.css";
+import "../styles/FilterButtons.css";
 
 class FilterButtons extends React.Component {
 

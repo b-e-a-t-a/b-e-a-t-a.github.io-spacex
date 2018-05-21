@@ -32,5 +32,9 @@
   margin: 0;
   padding-bottom: 10vh;
   color: #a7a9ac; }
-  .list h1, .list h2 {
+  .list__noresults, .list__error {
     text-align: center; }
+  .list .spinner-container {
+    height: 20vh;
+    background-color: #0f1112;
+    margin-bottom: 10vh; }

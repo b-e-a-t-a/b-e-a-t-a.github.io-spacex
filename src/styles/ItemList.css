@@ -75,7 +75,7 @@
     font-size: 14px;
     text-align: left;
     max-width: 35vw;
-    margin-right: 10vw;
+    margin-right: 20vw;
     text-overflow: ellipsis;
     overflow: hidden;
     cursor: pointer; }
@@ -86,8 +86,8 @@
     text-transform: uppercase;
     font-size: 14px;
     text-align: left;
-    margin-left: 10vw;
-    width: 35vw;
+    margin-left: 20vw;
+    max-width: 35vw;
     text-overflow: ellipsis;
     overflow: hidden;
     cursor: pointer; }

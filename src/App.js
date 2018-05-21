@@ -28,7 +28,7 @@ class App extends Component {
         .then(result => {
           this.setState({
             isLoaded: true,
-            launches: result,
+            launches: result
           });
         })
         .catch(error => {

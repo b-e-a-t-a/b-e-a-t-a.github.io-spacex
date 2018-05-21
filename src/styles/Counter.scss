@@ -18,5 +18,8 @@
 			border-color: $brownish-grey;
 			color: $brownish-grey;
 		}
+		&:focus {
+			outline: none;
+		}
 	}
 }

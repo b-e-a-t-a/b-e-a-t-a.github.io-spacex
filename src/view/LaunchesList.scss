@@ -6,7 +6,12 @@
 	margin: 0;
 	padding-bottom: 10vh;
 	color: $cool-grey;
-	h1, h2 {
+	&__noresults, &__error {
 		text-align: center;
+	}
+	.spinner-container {
+		height: 20vh;
+		background-color: $almost-black;
+		margin-bottom: 10vh;
 	}
 }
