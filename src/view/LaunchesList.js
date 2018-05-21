@@ -11,6 +11,7 @@ class LaunchesList extends React.Component {
 		super(props);
 		this.state = {
 			launches: this.props.launches,
+			isNoResults: false
 		}
 		this.handleClick = this.handleClick.bind(this);
 		this.handleClickAll = this.handleClickAll.bind(this);
@@ -61,22 +62,26 @@ class LaunchesList extends React.Component {
 	handleClick(e) {
 		const nameClicked = e.target.value;
 
-		fetch(`https://api.spacexdata.com/v2/launches?rocket_name=${nameClicked}`)
-	        .then(response => response.json())
-	        .then(result => {
-	          this.setState({
-	            launches: result,
-	          });
-	        })
-	        .catch(error => {
-	          this.setState({
-	            error
-	          });
-	        })
+		fetch(`https://api.spacexdata.com/v12/launches?rocket_name=${nameClicked}`)
+			.then(response => response.json())
+			.then(result => {
+				this.setState({
+					launches: result,
+
+				});
+				this.state.launches.length === 0 ? this.setState({isNoResults: true}) : this.setState({isNoResults: false});
+			})
+			.catch(error => {
+				this.setState({
+				error
+				});
+			})
 	}
 	handleClickAll() {
+		
 		this.setState({
 			launches: this.props.launches,
+			isNoResults: false
 		});
 	}
 
@@ -93,10 +98,6 @@ class LaunchesList extends React.Component {
 			)
 		})
 		const { error } = this.state;
-	    if (error) {
-	      return <h1>Sorry, no launches found </h1>;
-	    } else {
-
 			return (
 				<div className="list">
 					<ListHero />
@@ -105,10 +106,10 @@ class LaunchesList extends React.Component {
 			          onClick={this.handleClick}
 			          onClickAll={this.handleClickAll}
 			        />
-					<div className="list__container">{items}</div>
+			        {this.state.isNoResults && <h1>Sorry, no launches found </h1>}
+			        {this.state.error ? <h2>Sorry! The page you are looking for does not exist or another error occured. </h2> : <div className="list__container">{items}</div>}		
 				</div>
 			);
-		}
 	}
 }
 
