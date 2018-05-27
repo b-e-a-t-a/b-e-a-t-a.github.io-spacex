@@ -7,31 +7,47 @@ import LaunchDetails from './view/LaunchDetails';
 import LaunchesList from './view/LaunchesList';
 import Footer from './components/Footer';
 
-import { Provider } from 'mobx-react';
-import { observer, inject } from 'mobx-react';
-import { action } from 'mobx';
-import mainStore from './stores/mainStore';
-
 const Spinner = require('react-spinkit');
 
-@inject ('mainStore')
-@observer
 class App extends Component {
   constructor(props) {
     super(props);
-  }
+    this.state = {
+      viewName: 'list',
+      error: null,
+      isLoaded: false,
+      launches: []
+    };
 
+    this.handleLaunchClick = this.handleLaunchClick.bind(this);
+    this.handleBackClick = this.handleBackClick.bind(this);
+  }
+  componentDidMount() { 
+    fetch("https://api.spacexdata.com/v2/launches/all")
+        .then(response => response.json())
+        .then(result => {
+          this.setState({
+            isLoaded: true,
+            launches: result
+          });
+        })
+        .catch(error => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        })
+    }
   get activeViewComponent() {
-    const { mainStore } = this.props;
-    const { viewName } = mainStore.currentViewName;
+    const { viewName } = this.state;
 
     switch (viewName) {
       case 'list':
         return (
-          <Provider
-            mainStore={mainStore}>
-            <LaunchesList />
-          </Provider>
+          <LaunchesList
+            launches={this.state.launches}
+            onLaunchClick={this.handleLaunchClick}
+          />
         );
       case 'details':
         return (
@@ -46,19 +62,16 @@ class App extends Component {
         return null;
     }
   }
-
-  @action.bound
   handleLaunchClick() {
-    this.props.currentViewName = 'details';
+    this.setState({ viewName: 'details' });
   }
 
-  @action.bound
   handleBackClick() {
-    this.props.currentViewName = 'list';
+    this.setState({ viewName: 'list' });
   }
 
   render() {
-    const {error, isLoaded} = this.props.mainStore.listState;
+    const { error, isLoaded } = this.state;
 
     if (error) {
       return <div className="error"><img src="https://cdn.dribbble.com/users/27818/screenshots/985070/404_1x.jpg" /> </div>;
